@@ -17,6 +17,8 @@ import com.sena.database_connection.dtos.UserDto;
 import com.sena.database_connection.entities.User;
 import com.sena.database_connection.services.UserService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -49,7 +51,7 @@ public class UserController {
 
     // Endpoint para crear un usuario
     @PostMapping
-    public User create(@RequestBody UserDto body) {
+    public User create(@Valid @RequestBody UserDto body) {
 
         // Se crea una nueva instancia de User con los datos recibidos
         /*
