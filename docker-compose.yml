@@ -1,15 +1,8 @@
-services:
-  db_136:
-    image: postgres:18-alpine
-    container_name: db_136
-    volumes:
-      - jpa_136:/var/lib/postgresql/18/docker
-    environment:
-      POSTGRES_USER: ejemplo_136
-      POSTGRES_PASSWORD: ejemplo_136
-      POSTGRES_DB: ejemplo_136
-    ports:
-      - "5432:5432"
+spring.datasource.url=jdbc:mysql://localhost:3306/nombre_de_tu_bd?createDatabaseIfNotExist=true&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=tu_contraseña_de_mysql
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
-volumes:
-  jpa_136:
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
