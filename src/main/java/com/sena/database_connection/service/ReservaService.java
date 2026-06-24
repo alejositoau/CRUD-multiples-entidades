@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -136,5 +137,21 @@ public class ReservaService {
 
         return reporte;
     }
+
+    public Optional<Reserva> findById(Long id) {
+        return reservaRepository.findById(id);
+    }
+
+    public Reserva save(Reserva reserva) {
+        return reservaRepository.save(reserva);
+
+}
+public void deleteById(Long id) {
+    reservaRepository.deleteById(id);
+}
+
+public List<Reserva> findAll() {
+    return reservaRepository.findAll();
+}
 
 }
